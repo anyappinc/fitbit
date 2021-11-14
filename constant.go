@@ -13,5 +13,6 @@ var (
 	apiEndpoints = map[string]string{
 		"IntrospectToken":         "/1.1/oauth2/introspect",
 		"RevokeToken":             "/oauth2/revoke",
+		"GetProfile":              "/1/user/%s/profile.json",
 	}
 )
