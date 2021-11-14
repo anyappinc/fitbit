@@ -8,3 +8,10 @@ const (
 	UppercaseAlphabetLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" // UppercaseAlphabetLetters is a set of upper case alphabetic characters
 	LowercaseAlphabetLetters = "abcdefghijklmnopqrstuvwxyz" // LowercaseAlphabetLetters is a set of lower case alphabetic characters
 )
+
+var (
+	apiEndpoints = map[string]string{
+		"IntrospectToken":         "/1.1/oauth2/introspect",
+		"RevokeToken":             "/oauth2/revoke",
+	}
+)
