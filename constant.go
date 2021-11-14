@@ -11,6 +11,7 @@ const (
 
 var (
 	apiEndpoints = map[string]string{
+		"GetDailyActivitySummary": "/1/user/%s/activities/date/%s.json",
 		"IntrospectToken":         "/1.1/oauth2/introspect",
 		"RevokeToken":             "/oauth2/revoke",
 		"GetProfile":              "/1/user/%s/profile.json",
