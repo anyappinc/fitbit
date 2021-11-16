@@ -40,8 +40,10 @@ func (w *Water) UnmarshalJSON(b []byte) error {
 }
 
 // GetWater retrieves a summary and list of a user's water log entries for a given day.
+//
 // Scope.Nutrition is required.
-// Ref: https://dev.fitbit.com/build/reference/web-api/nutrition/get-water-log/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/nutrition/get-water-log/
 func (c *Client) GetWater(ctx context.Context, userID string, date time.Time, token *Token) (*Water, *RateLimit, []byte, error) {
 	endpoint := c.getEndpoint("GetWater", userID, date.Format(dateFormat))
 	b, rateLimit, err := c.getRequest(ctx, token, endpoint)

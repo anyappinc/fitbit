@@ -8,7 +8,8 @@ import (
 
 type (
 	// RateLimit represents the rate limit of API calls.
-	// > Note: The rate limit headers are approximate and asynchronously updated.
+	//
+	// Note: The rate limit headers are approximate and asynchronously updated.
 	RateLimit struct {
 		Quota     int64
 		Remaining int64

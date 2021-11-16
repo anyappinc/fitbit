@@ -339,9 +339,12 @@ func (p *Profile) UnmarshalJSON(b []byte) error {
 }
 
 // GetProfile retrieves the user's profile data.
+//
 // Scope.Profile is required.
+//
 // Scope.Location and Scope.Nutrition is required to obtain some fields.
-// Ref: https://dev.fitbit.com/build/reference/web-api/user/get-profile/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/user/get-profile/
 func (c *Client) GetProfile(ctx context.Context, userID string, token *Token) (*Profile, *RateLimit, []byte, error) {
 	endpoint := c.getEndpoint("GetProfile", userID)
 	b, rateLimit, err := c.getRequest(ctx, token, endpoint)

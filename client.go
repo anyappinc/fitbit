@@ -1,4 +1,3 @@
-// package fitbit suppport Authorization Code Grant Flow with Proof Key for Code Exchange (PKCE).
 package fitbit
 
 import (
@@ -26,7 +25,9 @@ type Client struct {
 }
 
 // NewClient initializes Fitbit API Client.
+//
 // When `applicationType` is ServerApplication, `clientSecret` is required.
+//
 // When `applicationType` is ClientApplication or PersonalApplication,
 // `clientSecret` should be empty.
 func NewClient(clientID, clientSecret string, applicationType ApplicationType, scope *Scope) *Client {
@@ -56,6 +57,7 @@ func NewClient(clientID, clientSecret string, applicationType ApplicationType, s
 
 // SetLocale sets locale.
 // This value is used to set Accept-Locale header.
+//
 // See more details https://dev.fitbit.com/build/reference/web-api/developer-guide/application-design/#Language
 func (c *Client) SetLocale(locale Locale) {
 	c.locale = locale
@@ -63,6 +65,7 @@ func (c *Client) SetLocale(locale Locale) {
 
 // SetLanguage sets language.
 // This value is used to set Accept-Language header.
+//
 // See more details https://dev.fitbit.com/build/reference/web-api/developer-guide/application-design/#Unit-Systems
 func (c *Client) SetLanguage(locale Locale) {
 	c.language = locale

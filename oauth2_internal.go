@@ -4,7 +4,7 @@ package fitbit
 // https://go.googlesource.com/oauth2/+/refs/heads/master/internal
 // which is distributed under BSD-3-Clause,
 // to customize behavior on token refresh.
-// Original license is available at https://go.googlesource.com/oauth2/+/refs/heads/master/LICENSE
+// The original license is available at https://go.googlesource.com/oauth2/+/refs/heads/master/LICENSE
 
 import (
 	"context"

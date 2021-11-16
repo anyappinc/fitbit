@@ -134,9 +134,12 @@ func (a *Activity) UnmarshalJSON(b []byte) error {
 }
 
 // GetDailyActivitySummary retrieves a summary and list of a user’s activities and activity log entries for a given day.
+//
 // Scope.Activity is required.
+//
 // Scope.HeartRate is required to obtain `DailyActivitySummary.Summary.HeartRateZones`
-// Ref: https://dev.fitbit.com/build/reference/web-api/activity/get-daily-activity-summary/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/activity/get-daily-activity-summary/
 func (c *Client) GetDailyActivitySummary(ctx context.Context, userID string, date time.Time, token *Token) (*DailyActivitySummary, *RateLimit, []byte, error) {
 	endpoint := c.getEndpoint("GetDailyActivitySummary", userID, date.Format(dateFormat))
 	b, rateLimit, err := c.getRequest(ctx, token, endpoint)

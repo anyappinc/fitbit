@@ -130,8 +130,10 @@ func (t *TokenState) UnmarshalJSON(b []byte) error {
 }
 
 // AuthCodeURL returns an url to link with user's Fitbit account.
-// Ref: https://dev.fitbit.com/build/reference/web-api/developer-guide/authorization/
-// Ref: https://dev.fitbit.com/build/reference/web-api/authorization/authorize/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/authorization/authorize/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/developer-guide/authorization/
 func (c *Client) AuthCodeURL(redirectURI string) (*url.URL, string, string) {
 	state := string(randomBytes(CSRFStateLength))
 	codeVerifier := randomBytes(CodeVerifierLength)
@@ -151,7 +153,8 @@ func (c *Client) AuthCodeURL(redirectURI string) (*url.URL, string, string) {
 }
 
 // Link obtains data for the user to interact with Fitbit APIs.
-// Ref: https://dev.fitbit.com/build/reference/web-api/authorization/oauth2-token/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/authorization/oauth2-token/
 func (c *Client) Link(ctx context.Context, code, codeVerifier, reqURIString string) (*LinkResponse, error) {
 	opts := []oauth2.AuthCodeOption{
 		oauth2.SetAuthURLParam("code_verifier", codeVerifier),
@@ -184,7 +187,8 @@ func (c *Client) Link(ctx context.Context, code, codeVerifier, reqURIString stri
 }
 
 // IntrospectToken retrieves the active state of an OAuth 2.0 token.
-// Ref: https://dev.fitbit.com/build/reference/web-api/authorization/introspect/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/authorization/introspect/
 func (c *Client) IntrospectToken(ctx context.Context, token *Token) (*TokenState, *RateLimit, []byte, error) {
 	endpoint := c.getEndpoint("IntrospectToken")
 	values := url.Values{}
@@ -202,14 +206,16 @@ func (c *Client) IntrospectToken(ctx context.Context, token *Token) (*TokenState
 
 // RevokeAccessToken disables the user's authorizations and all tokens,
 // associated with the specified access token.
-// Ref: https://dev.fitbit.com/build/reference/web-api/authorization/revoke-token/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/authorization/revoke-token/
 func (c *Client) RevokeAccessToken(ctx context.Context, token *Token) (*RateLimit, error) {
 	return c.revokeToken(ctx, token, token.AccessToken)
 }
 
 // RevokeRefreshToken disables the user's authorizations and all tokens,
 // associated with the specified refresh token.
-// Ref: https://dev.fitbit.com/build/reference/web-api/authorization/revoke-token/
+//
+// Web API Reference: https://dev.fitbit.com/build/reference/web-api/authorization/revoke-token/
 func (c *Client) RevokeRefreshToken(ctx context.Context, token *Token) (*RateLimit, error) {
 	return c.revokeToken(ctx, token, token.RefreshToken)
 }

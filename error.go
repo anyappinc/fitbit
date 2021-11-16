@@ -8,6 +8,7 @@ import (
 )
 
 // Error is the interface that has ability to return raw error returned from Fitbit APIs.
+//
 // This also implements the builtin error interface.
 type Error interface {
 	Raw() []byte
