@@ -5,13 +5,13 @@ type Locale string
 
 const (
 	LocaleAustralia     Locale = "en_AU"
-	LocaleFrance               = "fr_FR"
-	LocaleGermany              = "de_DE"
-	LocaleJapan                = "ja_JP"
-	LocaleNewZealand           = "en_NZ"
-	LocaleSpain                = "es_ES"
-	LocaleUnitedKingdom        = "en_GB"
-	LocaleUnitedStates         = "en_US"
+	LocaleFrance        Locale = "fr_FR"
+	LocaleGermany       Locale = "de_DE"
+	LocaleJapan         Locale = "ja_JP"
+	LocaleNewZealand    Locale = "en_NZ"
+	LocaleSpain         Locale = "es_ES"
+	LocaleUnitedKingdom Locale = "en_GB"
+	LocaleUnitedStates  Locale = "en_US"
 )
 
 func (l *Locale) asString() string {
