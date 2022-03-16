@@ -81,8 +81,8 @@ type (
 		CaloriesOutUnestimated int64           `json:"caloriesOutUnestimated"`
 		MarginalCalories       int64           `json:"marginalCalories"`
 		Distances              []Distance      `json:"distances"`
-		Elevation              int64           `json:"elevation"`
-		Floors                 int64           `json"floors"`
+		Elevation              float64         `json:"elevation"`
+		Floors                 int64           `json:"floors"`
 		Steps                  int64           `json:"steps"`
 		HeartRateZones         []HeartRateZone `json:"heartRateZones"`
 		RestingHeartRate       int64           `json:"restingHeartRate"`
